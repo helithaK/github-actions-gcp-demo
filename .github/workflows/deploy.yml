@@ -21,7 +21,10 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        pip install pytest
+
+    # 🔥 IMPORTANT FIX
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
 
     - name: Run tests
       run: pytest
