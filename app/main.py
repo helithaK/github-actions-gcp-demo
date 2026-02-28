@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello from GitHub Actions CI/CD!"}
+    return {"message": "Hello from GitHub Actions CI/CD! - created by hexxa"}
