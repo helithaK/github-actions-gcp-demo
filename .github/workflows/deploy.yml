@@ -34,6 +34,13 @@ jobs:
     - name: Setup gcloud
       uses: google-github-actions/setup-gcloud@v2
 
+    # Enable required GCP APIs
+    - name: Enable GCP APIs
+      run: |
+        gcloud services enable serviceusage.googleapis.com
+        gcloud services enable artifactregistry.googleapis.com
+        gcloud services enable run.googleapis.com
+
     # 🔥 Install Terraform
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
